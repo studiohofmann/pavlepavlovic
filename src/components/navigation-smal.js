@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
-import { useSiteMetadata } from '../hooks/use-site-metadata';
+import * as React from "react";
+import { Link } from "gatsby";
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 export default function NavigationSmal() {
   const { title } = useSiteMetadata();
@@ -11,7 +11,7 @@ export default function NavigationSmal() {
       `}
     >
       <div className="flex justify-center items-center h-14 bg-white">
-        <Link to="/" activeClassName="active" activeStyle={{ color: 'black' }}>
+        <Link to="/" activeClassName="active" activeStyle={{ color: "black" }}>
           {title}
         </Link>
       </div>
@@ -20,7 +20,7 @@ export default function NavigationSmal() {
         <Link
           to="/exhibitions"
           activeClassName="active"
-          activeStyle={{ color: 'black' }}
+          activeStyle={{ color: "black" }}
         >
           Exhibitions
         </Link>
@@ -28,7 +28,7 @@ export default function NavigationSmal() {
         <Link
           to="/cv-awards"
           activeClassName="active"
-          activeStyle={{ color: 'black' }}
+          activeStyle={{ color: "black" }}
         >
           CV / Awards
         </Link>
@@ -36,7 +36,7 @@ export default function NavigationSmal() {
         <Link
           to="/contact"
           activeClassName="active"
-          activeStyle={{ color: 'black' }}
+          activeStyle={{ color: "black" }}
         >
           Contact
         </Link>

@@ -53,29 +53,28 @@ export default function News() {
       {data.allContentfulNews.edges.map(({ node }, i) => {
         const singleImage = getImage(node.newsImage);
         return (
-          <div key={i} className="flex flex-col-reverse xl:flex-row mt-28">
-            <div className="flex flex-1 flex-col justify-between mt-14 xl:mt-0">
-              <div className="xl:mr-14">
-                <div className="text-center">{node.newsTitle}</div>
-                <br />
-                <br />
-                <div className="text-justify line-clamp-15">
-                  {renderRichText(node.newsText, options)}
-                </div>
-                <br />
-                <div className="text-center">
-                  <Link
-                    to="/archive"
-                    activeClassName="active"
-                    activeStyle={{ color: "black" }}
-                  >
-                    more
-                  </Link>
-                </div>
+          <div key={i} className="mt-28 xl:flex">
+            <div className="text-center xl:hidden">{node.newsTitle}</div>
+            <br />
+            <GatsbyImage className="xl:flex-1 xl:mr-7" image={singleImage} />
+            <br />
+            <div className="xl:flex-1 xl:ml-7">
+              <div className="text-center hidden xl:block">
+                {node.newsTitle}
               </div>
-            </div>
-            <div className="flex-1">
-              <GatsbyImage image={singleImage} />
+              <br />
+              <div className="text-justify line-clamp-15">
+                {renderRichText(node.newsText, options)}
+              </div>
+              <br />
+              <Link
+                to="/archive"
+                className="text-center"
+                activeClassName="active"
+                activeStyle={{ color: "black" }}
+              >
+                more
+              </Link>
             </div>
           </div>
         );
