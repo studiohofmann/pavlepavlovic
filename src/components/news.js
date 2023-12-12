@@ -1,23 +1,23 @@
-import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
-import { renderRichText } from 'gatsby-source-contentful/rich-text';
-import { INLINES } from '@contentful/rich-text-types';
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { INLINES } from "@contentful/rich-text-types";
 
 export default function News() {
   const options = {
     renderText: (text) =>
-      text.split('\n').flatMap((text, i) => [i > 0 && <br />, text]),
+      text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
 
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => {
         let anchorAttrs = {};
 
-        if (!node.data.uri.includes('my-domain-name.com')) {
+        if (!node.data.uri.includes("my-domain-name.com")) {
           anchorAttrs = {
-            target: '_blank',
-            rel: 'noopener noreferrer',
+            target: "_blank",
+            rel: "noopener noreferrer",
           };
         }
 
@@ -59,13 +59,19 @@ export default function News() {
                 <div className="text-center">{node.newsTitle}</div>
                 <br />
                 <br />
-                <div className="text-justify">
+                <div className="text-justify line-clamp-15">
                   {renderRichText(node.newsText, options)}
                 </div>
-              </div>
-              <br />
-              <div className="text-center">
-                <Link to="/archive">Archive</Link>
+                <br />
+                <div className="text-center">
+                  <Link
+                    to="/archive"
+                    activeClassName="active"
+                    activeStyle={{ color: "black" }}
+                  >
+                    more
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="flex-1">
