@@ -7,7 +7,7 @@ export default function NavigationSmal() {
 
   return (
     <div
-      className={`fixed z-10 flex flex-col justify-between h-full w-full right-0 left-0 pr-4 pl-4
+      className={`fixed z-10 flex flex-col justify-between w-full right-0 left-0 pr-4 pl-4
       `}
     >
       <div className="flex justify-center items-center h-14 bg-white">
