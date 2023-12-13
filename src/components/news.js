@@ -67,12 +67,7 @@ export default function News() {
                 {renderRichText(node.newsText, options)}
               </div>
               <br />
-              <Link
-                to="/archive"
-                className="text-center"
-                activeClassName="active"
-                activeStyle={{ color: "black" }}
-              >
+              <Link to="/archive" className="text-center">
                 more
               </Link>
             </div>
