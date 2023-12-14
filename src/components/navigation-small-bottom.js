@@ -1,22 +1,10 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { useSiteMetadata } from "../hooks/use-site-metadata";
 
-export default function NavigationSmal() {
-  const { title } = useSiteMetadata();
-
+export default function NavigationSmallBottom() {
   return (
-    <div
-      className={`fixed z-10 flex flex-col justify-between w-full right-0 left-0 pr-4 pl-4
-      `}
-    >
-      <div className="flex justify-center items-center h-14 bg-white">
-        <Link to="/" activeClassName="active" activeStyle={{ color: "black" }}>
-          {title}
-        </Link>
-      </div>
-
-      <div className="h-14 flex  justify-between items-center bg-white">
+    <div className="fixed z-10 bottom-0 left-0 right-0 pl-4 pr-4">
+      <div className="flex flex-1 justify-between items-center h-14 bg-white">
         <Link
           to="/exhibitions"
           activeClassName="active"
